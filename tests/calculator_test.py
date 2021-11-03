@@ -26,13 +26,3 @@ def test_calculator_subtract():
     calc = Calculator()
     calc.subtract_number(1)
     assert calc.get_result() == -1
-def test_calculator_multiply():
-    """Testing multiplication of two numbers"""
-    calc = Calculator()
-    result = calc.multiply_numbers(2,3)
-    assert result == 6
-def test_calculator_divide():
-    """Testing division of two numbers"""
-    calc = Calculator()
-    result = calc.divide_numbers(6,3)
-    assert result == 2
