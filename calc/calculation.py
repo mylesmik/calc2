@@ -1,4 +1,5 @@
 """This is our calculation base class / Abstract Class"""
+# pylint: disable=all
 class Calculation:
 
     #contstructor and it is the first function called when an object of the class is instantiated

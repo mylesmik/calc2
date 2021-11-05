@@ -1,3 +1,4 @@
+# pylint: disable=all
 """Testing the Calculator"""
 from calculator.main import Calculator
 
@@ -26,3 +27,15 @@ def test_calculator_subtract():
     calc = Calculator()
     calc.subtract_number(1)
     assert calc.get_result() == -1
+
+def test_calculator_multiply():
+    """Testing the multiply method of the calculator"""
+    calc = Calculator()
+    calc.multiply_number(1)
+    assert calc.get_result() == 0
+
+def test_calculator_divide():
+    """Testing the divide method of the calculator"""
+    calc = Calculator()
+    calc.divide_number(1)
+    assert calc.get_result() == 0
