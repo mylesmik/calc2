@@ -1,12 +1,5 @@
-# Calculator Project Setup
-[![Build Status](https://app.travis-ci.com/mylesmik/calc2.svg?branch=main)](https://app.travis-ci.com/mylesmik/calc2)
-
-Run Pip Install
-pip install -r requirements.txt
-
-To run tests, Lint, and Coverage report use this command:
-
-pytest  --pylint --cov
+# Calculator_2
+[![Build Status](https://app.travis-ci.com/mylesmik/calc2.svg?branch=fin)](https://app.travis-ci.com/mylesmik/calc2)
 
 .pylintrc is the config for pylint
 .coveragerc is the config for coverage
