@@ -10,4 +10,5 @@ script:
 branches:
   only:
     - main
-    - development
+    - fin
+    - part4
