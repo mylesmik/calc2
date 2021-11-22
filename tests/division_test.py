@@ -19,6 +19,5 @@ def test_calculator_division_exception():
     division = Division(mynumbers)
     # Assert
     with pytest.raises(ZeroDivisionError):
-        #import pdb;pdb.set_trace()
         result = division.get_result()
         assert result is True
