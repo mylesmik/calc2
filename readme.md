@@ -1,5 +1,5 @@
 # Calculator Project Setup
-[![Build Status](https://app.travis-ci.com/mylesmik/calc2.svg?branch=part4)](https://app.travis-ci.com/mylesmik/calc2)
+[![Build Status](https://app.travis-ci.com/mylesmik/calc2.svg?branch=part5)](https://app.travis-ci.com/mylesmik/calc2)
 
 To run tests, Lint, and Coverage report use this command:
 
