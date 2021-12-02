@@ -1,5 +1,9 @@
 """ This is the increment function"""
+from calc.calculations.addition import Addition
+from calc.calculations.subtraction import Subtraction
+from calc.calculations.multiplication import Multiplication
 from calc.history.calculations import Calculations
+from calc.calculations.division import Division
 
 #the calculator class just contains the methods to calculate
 class Calculator:
@@ -10,24 +14,27 @@ class Calculator:
         """ This is the gets the result of the calculation"""
         # I made this method so that I don't have more than one action per function
         return Calculations.get_last_calculation_result_value()
+
     @staticmethod
-    #tuple allows me to pass in as many values as a I want
-    def add_numbers(tuple_values: tuple):
+    def __add__(values: tuple):
         """ adds list of numbers"""
-        Calculations.add_addition_calculation(tuple_values)
+        Calculations.append_calculation_to_history(Addition.create(values))
         return True
+
     @staticmethod
-    def subtract_numbers(tuple_values: tuple):
+    def __sub__(values: tuple):
         """ subtract a list of numbers from result"""
-        Calculations.add_subtraction_calculation(tuple_values)
+        Calculations.append_calculation_to_history(Subtraction.create(values))
         return True
+
     @staticmethod
-    def multiply_numbers(tuple_values: tuple):
+    def __mul__(values: tuple):
         """ multiplication number from result"""
-        Calculations.add_multiplication_calculation(tuple_values)
+        Calculations.append_calculation_to_history(Multiplication.create(values))
         return True
+
     @staticmethod
-    def divide_numbers(tuple_values: tuple):
-        """ division number from result"""
-        Calculations.add_division_calculation(tuple_values)
+    def __truediv__(values: tuple):
+        """ Division number from result"""
+        Calculations.append_calculation_to_history(Division.create(values))
         return True
