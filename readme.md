@@ -1,10 +1,8 @@
-# Calculator Project Setup
-[![Build Status](https://app.travis-ci.com/mylesmik/calc2.svg?branch=part5)](https://app.travis-ci.com/mylesmik/calc2)
+# Calculator CSV Operations
+<h3>Not sure what the warning  is but the rest of the code works fine</h3>
+<br>
+![ScreenShot]()
 
-To run tests, Lint, and Coverage report use this command:
+![ScreenShot]()
 
-pytest  --pylint --cov
 
-.pylintrc is the config for pylint
-.coveragerc is the config for coverage
-setup.py is a config file for pytest

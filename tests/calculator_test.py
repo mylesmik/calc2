@@ -1,63 +1,84 @@
-"""Testing the Calculator"""
+"""Testing the Calculator class"""
 import pytest
 from calc.calculator import Calculator
 from calc.history.calculations import Calculations
+from calc.csv_handling.csv_reading import CsvRead
+from calc.csv_handling.log_file import LogWrite
+from calc.csv_handling.csv_writing import CsvWrite
+from calc.csv_handling.file_move import FileOperator
+
 
 @pytest.fixture
-def clear_history_fixture():
-    """define a function that will run each time you pass it to a test, it is called a fixture"""
-    # pylint: disable=redefined-outer-name
+def clear_history():
+    """Clears the history of the calculator for each test"""
     Calculations.clear_history()
-#You have to add the fixture function as a parameter to the test that you want to use it with
 
-def test_calculator_add_static(clear_history_fixture, addition_file_fixture):
-    """testing that our calculator has a static method for addition"""
-    #Arrange
-    tuple_values = addition_file_fixture.value_1[5], addition_file_fixture.value_2[5]
-    #Act
-    Calculator.__add__(tuple_values)
-    #Assert
-    assert Calculations.get_last_calculation_object() == addition_file_fixture['result'][5] \
-           and clear_history_fixture is True
 
-def test_calculator_subtract_static(clear_history_fixture, subtraction_file_fixture):
-    """Testing the subtract method of the calc"""
-    #Arrange
-    tuple_values = subtraction_file_fixture.value_1[5], subtraction_file_fixture.value_2[5]
-    #Act
-    Calculator.__sub__(tuple_values)
-    #Assert
-    assert Calculations.get_last_calculation_object() == subtraction_file_fixture['result'][5] \
-           and clear_history_fixture is True
+def row_to_tup(row):
+    """Converts the values within a row into a tuple"""
+    return row['value_a'], row['value_b'], row['value_c']
 
-def test_calculator_multiply_static(clear_history_fixture, multiplication_file_fixture):
-    """Testing the multiplication method of the calc"""
-    #Arrange
-    tuple_values = multiplication_file_fixture.value_1[5], multiplication_file_fixture.value_2[5]
-    #Act
-    Calculator.__mul__(tuple_values)
-    #Assert
-    assert Calculations.get_last_calculation_object() == multiplication_file_fixture['result'][5] \
-           and clear_history_fixture is True
 
-def test_calculator_divide_static(clear_history_fixture, division_file_fixture):
-    """Testing the division method of the calc"""
-    #Arrange
-    tuple_values = division_file_fixture.value_1[5], division_file_fixture.value_2[5]
-    #Act
-    Calculator.__truediv__(tuple_values)
-    #Assert
-    assert Calculations.get_last_calculation_object() == division_file_fixture['result'][5].round(decimals=5) \
-           and clear_history_fixture is True
+def test_adding(clear_history):
+    """Tests the adding function of the calculator class"""
+    # pylint: disable=redefined-outer-name, unused-argument, unused-variable
+    test_file_name = 'adding.csv'
+    csv_loc = CsvRead.search_csv(test_file_name)
+    df_two = CsvRead.csv_to_df(csv_loc)
+    for index, row in df_two.iterrows():
+        tup = row_to_tup(row)
+        test_value = Calculator.add_numbers(tup)
+        LogWrite.add_to_log(test_file_name)
+        assert test_value == row['result']
+    FileOperator.move_to_destination(csv_loc)
 
-def test_calculator_divide_exception_static(clear_history_fixture, division_file_fixture):
-    """Testing the division method of the calc for the exception"""
-    #Arrange
-    tuple_values = division_file_fixture.value_1[2], division_file_fixture.value_2[0]
-    #Act
-    Calculator.__truediv__(tuple_values)
-    #Assert
-    with pytest.raises(ZeroDivisionError):
-        assert Calculations.get_last_calculation_object() is True \
-               and clear_history_fixture is True
 
+
+def test_subtracting(clear_history):
+    """Tests the subtracting function of the calculator class"""
+    # pylint: disable=redefined-outer-name, unused-argument, unused-variable
+    test_file_name = 'subtracting.csv'
+    csv_loc = CsvRead.search_csv(test_file_name)
+    df_two = CsvRead.csv_to_df(csv_loc)
+    for index, row in df_two.iterrows():
+        tup = row_to_tup(row)
+        assert Calculator.subtract_numbers(tup) == row['result']
+        LogWrite.add_to_log(test_file_name)
+    FileOperator.move_to_destination(csv_loc)
+
+
+def test_multiplying(clear_history):
+    """Tests the multiplying function of the calculator class"""
+    # pylint: disable=redefined-outer-name, unused-argument, unused-variable
+    test_file_name = 'multiplying.csv'
+    csv_loc = CsvRead.search_csv(test_file_name)
+    df_two = CsvRead.csv_to_df(csv_loc)
+    for index, row in df_two.iterrows():
+        tup = row_to_tup(row)
+        assert Calculator.multiply_numbers(tup) == row['result']
+        LogWrite.add_to_log(test_file_name)
+    FileOperator.move_to_destination(csv_loc)
+
+def test_dividing(clear_history):
+    """Tests the dividing function of the calculator class"""
+    # pylint: disable=redefined-outer-name, unused-argument, unused-variable
+    test_file_name = 'dividing.csv'
+    csv_loc = CsvRead.search_csv(test_file_name)
+    df_two = CsvRead.csv_to_df(csv_loc)
+    for index, row in df_two.iterrows():
+        tup = row_to_tup(row)
+        if row['result'] == '#DIV/0!':
+            assert Calculator.divide_numbers(tup) == ZeroDivisionError
+            LogWrite.add_to_zero_log(test_file_name)
+        else:
+            assert Calculator.divide_numbers(tup) == float(row['result'])
+            LogWrite.add_to_log(test_file_name)
+    FileOperator.move_to_destination(csv_loc)
+
+
+def test_complete_logs():
+    """Commits the logs to csvs and resets the dataframes"""
+    CsvWrite.set_directory()
+    LogWrite.commit_log()
+    LogWrite.commit_zero_log()
+    LogWrite.reset_dfs()

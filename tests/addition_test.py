@@ -1,12 +1,11 @@
 """Testing Addition"""
 from calc.calculations.addition import Addition
 
-def test_calculation_addition(addition_file_fixture):
+def test_calculation_addition():
     """testing that our calculator has a static method for addition"""
     #Arrange
-    for index, row in addition_file_fixture.iterrows():
-        values = (row.value_1, row.value_2)
+    mynumbers = (1.0,2.0)
     # Act
-    addition = Addition.create(values)
+    addition = Addition(mynumbers)
     #Assert
-    assert addition.get_result() == row.result
+    assert addition.get_result() == 3.0
