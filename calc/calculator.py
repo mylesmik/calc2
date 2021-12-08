@@ -4,10 +4,6 @@ from calc.history.calculations import Calculations
 class Calculator:
     """ This is the Calculator class"""
     @staticmethod
-    def get_last_result_value():
-        """ This is the gets the result of the calculation"""
-        return Calculations.get_last_calculation_result_value()
-    @staticmethod
     def add_numbers(tuple_values: tuple):
         """ adds list of numbers"""
         Calculations.add_addition_calculation(tuple_values)
