@@ -1,5 +1,6 @@
 from app.controllers.controller import ControllerBase
 from calc.calculator import Calculator
+from calc.history.calculations import Calculations
 from flask import render_template, request, flash
 
 
@@ -21,7 +22,7 @@ class CalculatorController(ControllerBase):
             my_tuple = (value1, value2, value3)
             # this will call the correct operation
             getattr(Calculator, operation)(my_tuple)
-            result = str(Calculator.get_last_result_value())
+            result = str(Calculations.get_last_calculation_result_value())
             return render_template('result.html', value1=value1, value2=value2, value3=value3, operation=operation, result=result)
         return render_template('calculator.html', error=error)
     @staticmethod
