@@ -1,5 +1,4 @@
 """Testing Division"""
-import pytest
 from calc.calculations.division import Division
 
 def test_calculation_division():
@@ -10,14 +9,3 @@ def test_calculation_division():
     division = Division(mynumbers)
     #Assert
     assert division.get_result() == 0.5
-
-def test_calculator_division_exception():
-    """ Testing division exception for division by zero"""
-    # Arrange
-    mynumbers = (1.0, 0.0)
-    # Act
-    division = Division(mynumbers)
-    # Assert
-    with pytest.raises(ZeroDivisionError):
-        result = division.get_result()
-        assert result is True
