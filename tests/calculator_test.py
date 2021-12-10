@@ -68,7 +68,7 @@ def test_dividing(clear_history):
     for index, row in df_two.iterrows():
         tup = row_to_tup(row)
         if row['result'] == '#DIV/0!':
-            assert Calculator.divide_numbers(tup) == ZeroDivisionError
+            assert Calculator.divide_numbers(tup) == 'ZeroDivisionError'
             LogWrite.add_to_zero_log(test_file_name)
         else:
             assert Calculator.divide_numbers(tup) == float(row['result'])

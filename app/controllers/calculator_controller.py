@@ -22,7 +22,7 @@ class CalculatorController(ControllerBase):
             my_tuple = (value1, value2, value3)
             # this will call the correct operation
             getattr(Calculator, operation)(my_tuple)
-            result = str(Calculations.get_last_calculation_result_value())
+            result = Calculations.get_last_calculation_result_value()
             return render_template('result.html', value1=value1, value2=value2, value3=value3, operation=operation, result=result)
         return render_template('calculator.html', error=error)
     @staticmethod

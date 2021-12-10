@@ -11,6 +11,6 @@ class Division(Calculation):
                 try:
                     divided_value /= value
                 except ZeroDivisionError:
-                    return ZeroDivisionError
+                    return 'ZeroDivisionError'
 
         return round(divided_value,2)

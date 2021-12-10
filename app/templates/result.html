@@ -13,17 +13,36 @@
                         {% with messages = get_flashed_messages() %}
                             {% if messages %}
                                 {% for message in messages %}
-                                    <div class="alert alert-success" role="alert">
+                                    <div class="alert alert-success alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true" class="closebtn">&times;</span>
+                                        </button>
                                         {{ message }}
                                     </div>
                                 {% endfor %}
                             {% endif %}
                         {% endwith %}
-                        <strong>Value 1: </strong><br> {{ value1 }} <br>
-                        <strong>Value 2: </strong><br> {{ value2 }} <br>
-                        <strong>Value 3: </strong><br> {{ value3 }} <br>
-                        <strong>Operation: </strong><br> {{ operation }} <br>
-                        <strong>Result: </strong><br> {{ result }}
+                        <h1>Result Table</h1>
+                        <table id="data" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Value 1</th>
+                                <th>Value 2</th>
+                                <th>Value 3</th>
+                                <th>Operation</th>
+                                <th>Result</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{ value1 }}</td>
+                                <td>{{ value2 }}</td>
+                                <td>{{ value3 }}</td>
+                                <td>{{ operation }}</td>
+                                <td>{{ result }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
