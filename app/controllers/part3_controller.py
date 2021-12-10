@@ -1,8 +1,8 @@
 from app.controllers.controller import ControllerBase
 from flask import render_template
 
-class IndexController(ControllerBase):
+class Part3Controller(ControllerBase):
     # pylint: disable-all
     @staticmethod
     def get():
-        return render_template('index.html')
+        return render_template('part3.html')

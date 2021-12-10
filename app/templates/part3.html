@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <div class="jumbotron text-center">
+    <h1 class="display-5">Encapsulation, Inheritance, Abstraction and Polymorphism</h1>
+    <p class="lead">This is an article to show you how the above OOP concepts are reflected in the Calculator
+        Program.</p>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-20">
+            <div class="jumbotron text-center">
+                <h1 class="display-5">Encapsulation</h1>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">
+                        <b>Encapsulation</b> is the concept that an object contains its own, private information. Within a
+                        class that is built around an object, the class contains public methods that are able to operate
+                        on the private information held within the objects private variables. The private information
+                        for an object is unique to that object, and even objects within the same class cannot directly
+                        access that information.
+                    </p>
+                    <hr class="my-4">
+                    <p class="card-text">
+                        Encapsulation can be better understood by the example of various departments within an
+                        organization.
+                        Since there are various departments in an organization that work together to complete
+                        tasks/projects, etc. There are times
+                        when a department may want to access information from another department and in order to do so
+                        it would need to ask permission to
+                        access the information from the other department as that information is private to only that
+                        department, and it cannot be accessed
+                        directly or manipulated in any sort of way.
+                    </p>
+                    <hr class="my-4">
+                    <b class="card-text">Demonstration of Encapsulation in our program:</b>
+                    <p class="card-text">In the snippet below we see that the convert to tuple method encapsulates the
+                        conversion of values to float before sending it to the different methods for further use: </p>
+                    <img src="{{ url_for('static', filename='images/enc1.PNG') }}" alt="cmd eg">
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="jumbotron text-center">
+                <h1 class="display-5">Inheritance</h1>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">
+                        <b>Inheritance</b> is the capability of one class to derive or inherit the properties from another
+                        class.
+                    </p>
+                    <hr class="my-4">
+                    <p class="card-text">
+                        The way I understand it is that it provides reusability of a code. We don’t have to write the
+                        same code again and again. Also, it allows us to add more features to a class without modifying
+                        it.
+                    </p>
+                    <hr class="my-4">
+                    <p class="card-text">
+                        It is transitive in nature, which means that if class B inherits from another class A, then all
+                        the subclasses of B would automatically inherit from class A.
+                    </p>
+                    <hr class="my-4">
+                    <p class="card-text">
+                        <b>Demonstration of Inheritance in our program:</b>
+                    </p>
+                    <p class="card-text">
+                        In the code snippets below we shall see how Inheritance is reflected in our Calculator program:
+                    </p>
+                    <img src="{{ url_for('static', filename='images/in1.PNG') }}" alt="cmd arrow">
+                    <p class="card-text">
+                        In this code snippet we see the Class <b>Calculation</b> having the methods <b>__init__(),
+                        create(), convert_args_to_tuple_of_float()</b> which is one of the main classes of the
+                        Calculator because it holds the <b>Constructor</b> method which is the most crucial step of our
+                        Calculator to create the various objects.
+                    </p>
+                    <hr class="my-4">
+                    <p class="card-text">
+                        <b>Notice the trend in the code snippets below:</b>
+                    </p>
+                    <img src="{{ url_for('static', filename='images/poly1.PNG') }}" alt="cmd arrow">
+                    <hr class="my-4">
+                    <img src="{{ url_for('static', filename='images/poly2.PNG') }}" alt="cmd arrow">
+                    <hr class="my-4">
+                    <img src="{{ url_for('static', filename='images/poly3.PNG') }}" alt="cmd arrow">
+                    <hr class="my-4">
+                    <img src="{{ url_for('static', filename='images/poly4.PNG') }}" alt="cmd arrow">
+                    <hr class="my-4">
+                    <p class="card-text">
+                        <b>In the code snippets above did you notice a common trend?</b>
+                    </p>
+                    <p class="card-text">
+                        From the above code snippets we notice that all the above classes <b>Inherit</b> the properties
+                        of the <b>Calculation class</b> , in this program the Calcualtion class is essential to be
+                        inherited from as this class does the task of creating the objects of the various types of
+                        operations to be performed in our Calculator.
+                    </p>
+                    <p class="card-text">
+                        Thus, we see the use of <b>Inheritance</b> where the classes <b>Addition, Subtraction,
+                        Multiplication and Division</b> all inherit the properties of Calculation and since it is
+                        transitive in nature so all the subclasses of Addition, Subtraction, Multiplication and Division
+                        also inherit from Calculation.
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="jumbotron text-center">
+                <h1 class="display-5">Abstraction</h1>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">
+                        <b>Abstraction</b> is one of the key concepts of object-oriented programming (OOP) languages. Its main
+                        goal is to handle complexity by hiding unnecessary details from the user. That enables the user
+                        to implement more complex logic on top of the provided abstraction without understanding or even
+                        thinking about all the hidden complexity.
+                    </p>
+                    <hr class="my-4">
+                    <b class="card-text">Demonstration of Abstraction in our program:</b>
+                    <p class="card-text">In the snippet below we see that we have defined a function to perform addition
+                        and add the addition calculation to history:</p>
+                    <img src="{{ url_for('static', filename='images/cmd_5.PNG') }}" alt="cmd eg">
+                    <p class="card-text">This method is designed in such a way that it just calls the various other
+                        functions which perform their own tasks separately:</p>
+                    <img src="{{ url_for('static', filename='images/cmd_1.PNG') }}" alt="cmd arrow">
+                    <p class="card-text">Create method is called which then performs its task of calling the constructor
+                        method which then in turn creates the object for addition:</p>
+                    <img src="{{ url_for('static', filename='images/cmd_2.PNG') }}" alt="cmd create">
+                    <p class="card-text">Once the addition object is created, addition method is called which then takes
+                        the addition object which was created and parses it through the method and returns the
+                        result:</p>
+                    <img src="{{ url_for('static', filename='images/cmd_3.PNG') }}" alt="cmd add">
+                    <p class="card-text">Once the addition object returns the result, it is then sent to the
+                        append_to_history method which performs the task of appending the addition calculation to our
+                        calculator's history:</p>
+                    <img src="{{ url_for('static', filename='images/cmd_4.PNG') }}" alt="cmd append">
+                    <p class="card-text">From the above series of snippets and the flow between each method we see how
+                        we made the Addition operation a single method which would then be a single button on a GUI
+                        because we want to make it easier for the user but it is actually a series of method calls and
+                        operations which eventually leads to the Addition operation. This is exactly what
+                        <b>Abstraction </b>is.</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="jumbotron text-center">
+                <h1 class="display-5">Polymorphism</h1>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">
+                        The word polymorphism means having many forms. In programming, polymorphism means the same
+                        function name (but different signatures) being used for different types.
+                    </p>
+                    <hr class="my-4">
+                    <p class="card-text">
+                        The way I understand it is that it helps in creating one common function call which has the same
+                        name but it holds different types of results and functionalities in different classses based on
+                        which object calls it.
+                    </p>
+                    <hr class="my-4">
+                    <p class="card-text">
+                        The type of Polymorphism which is reflected in our Calculator program is the Polymorphism with
+                        class methods.
+                    </p>
+                    <hr class="my-4">
+                    <p class="card-text">
+                        <b>Demonstration of Polymorphism in our program:</b>
+                    </p>
+                    <p class="card-text">
+                        In the code snippets below we shall see how Polymorphism is reflected in our Calculator program:
+                    </p>
+                    <img src="{{ url_for('static', filename='images/poly1.PNG') }}" alt="cmd arrow">
+                    <p class="card-text">
+                        In this code snippet we see the Class <b>Addition</b> having the method <b>get_result()</b>
+                        which performs the action of returning the sum of the values of the tuple.
+                    </p>
+                    <hr class="my-4">
+                    <img src="{{ url_for('static', filename='images/poly2.PNG') }}" alt="cmd arrow">
+                    <p class="card-text">
+                        In this code snippet we see the Class <b>Subtraction</b> having the method <b>get_result()</b>
+                        which performs the action of returning the difference of the values of the tuple.
+                    </p>
+                    <hr class="my-4">
+                    <img src="{{ url_for('static', filename='images/poly3.PNG') }}" alt="cmd arrow">
+                    <p class="card-text">
+                        In this code snippet we see the Class <b>Multiplication</b> having the method
+                        <b>get_result()</b> which performs the action of returning the product of the values of the
+                        tuple.
+                    </p>
+                    <hr class="my-4">
+                    <img src="{{ url_for('static', filename='images/poly4.PNG') }}" alt="cmd arrow">
+                    <p class="card-text">
+                        In this code snippet we see the Class <b>Division</b> having the method <b>get_result()</b>
+                        which performs the action of returning the quotient of the division of the values of the tuple.
+                    </p>
+                    <hr class="my-4">
+                    <p class="card-text">
+                        Thus, from seeing the above code snippets we notice how the <b>get_result()</b> method has
+                        different functionalities in the various Classes such as <b>Addition, Subtraction, Division,
+                        Multiplication</b> it is present in and it displays the property of Polymorphism where the same
+                        function name is being used to perform different type of functions depending on which object
+                        calls it and how it is declared.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

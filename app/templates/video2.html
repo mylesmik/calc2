@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Browser Wars</h1>
+    <p class="lead">After the world gained access to the Internet it was difficult to navigate through it. This led to
+        the invention of the Browser.</p>
+    <div class="text-center">
+        <img src="{{ url_for('static', filename='images/war.jpg') }}" height="250" width="400" class="rounded" alt="browser">
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="mt-4"></div>
+            <p>
+                In 1993, Mark Anderson (Founder, MOSAIC) launched and tested MOSAIC with 12 people. The test was a
+                success and slowly the word about MOSAIC spread and everyone started using it.
+
+                In February 1994, they took a plane to Illinois in order to form a team to expand their business and to
+                have a free web browser for all. Bill Gates did not agree with this, he wanted the whole world to use
+                the internet through some kind of toll both for which he had designed MSN.com.
+                He was arrogant and did not accept or agree to any new ideas.
+
+                In the Summer of 1994, Jim Clarke and his team developed NetScape in a few months. It was better than
+                MOSAIC and they knew they had to improve their browser to make it better and more compelling.
+
+            </p>
+        </div>
+        <div class="col-sm-3">
+            <div class="mt-4"></div>
+            <div class="card border rounded">
+                <img src="{{ url_for('static', filename='images/mosaic.jpg') }}" class="card-img-top" alt="pic1">
+                <div class="card-body">
+                    <h5 class="card-title">MOSAIC Browser</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="mt-4"></div>
+            <p>
+                On 13th October 1994, ‘Navigator’ browser was launched by NetScape. It got millions of downloads.
+                Microsoft realised that they were not the only giants in the IT industry anymore.
+                Bill Gates was shook by NetScape’s success and sent out a memo called ‘Internet Tidal Wave’ where he
+                declared that the Web is the single most important component and that they had to match the level of
+                NetScape or get better and beat NetScape.
+
+                By 1995, the Internet was a global phenomenon. NetScape started expanding their business. They fired
+                Gary Reback, an antitrust lawyer who worked and fought for companies in the Silicon Valley, such as
+                Microsoft.
+
+            </p>
+        </div>
+        <div class="col-sm-3">
+            <div class="mt-4"></div>
+            <div class="card border rounded">
+                <img src="{{ url_for('static', filename='images/navigator.png') }}" class="card-img-top" alt="navigator browser">
+                <div class="card-body">
+                    <h5 class="card-title">Navigator Browser</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="mt-4"></div>
+            <p>
+                Microsoft arranged a meeting with NetScape and offered them 1M$ to buy NetScape or else they told them
+                that they would copy their idea regardless, so might as well make money out of it but this was against
+                the law so NetScape asked Reback to sue Microsoft, who felt that this was just a huge setup by NetScape.
+
+                NetScape wanted to go public with an IPO but Wall Street had only allowed companies with at least 2
+                years business experience period whereas NetScape only had 1 year of this experience. However, on the
+                day of the IPO release, their stocks went through the roof. They had invested 5M$ which on the day of
+                the IPO release went up to 663M$.
+
+                NetScape became arrogant like Microsoft. Jim Clark announced publicly that he thought Microsoft was not
+                relevant anymore and that Microsoft was a dead company.
+
+                On December 7 1995, Microsoft let the world know that they were not done yet with the release of the
+                Internet Explorer in order to beat NetScape. In 1995 people referred to the browser as NetScape but this
+                was about to change. NetScape was in trouble as Microsoft had better salesmen and better marketing teams
+                which were their hidden weapons. Their salesmen convinced people to not install anything other than
+                Internet Explorer.
+
+            </p>
+        </div>
+        <div class="col-sm-3">
+            <div class="mt-4"></div>
+            <div class="card border rounded">
+                <img src="{{ url_for('static', filename='images/negotiation.jpg') }}" width="100" class="card-img-top" alt="negotiation">
+                <div class="card-body">
+                    <h5 class="card-title">Negotiations between Microsoft and NetScape</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="mt-4"></div>
+            <p>
+                Internet Explorer was free as compared to Netscape, this too was an important factor why people
+                preferred Internet Explorer over Netscape. By the time of the release of Internet Explorer 4.0 almost
+                90% of the traffic on the internet used Internet Explorer.
+
+                By September of 1997, the Browser war was over and Microsoft had won it. They threw a huge party as a
+                celebration for the same. Clark had made 2B$ out of the invested 5M$.
+
+                After a few years, Reback sued Microsoft and the Government was now aware of Microsoft’s illegal
+                monopoly and predatory practices to stop Netscape from being used and sold.
+            </p>
+        </div>
+        <div class="col-sm-3">
+            <div class="mt-4"></div>
+            <div class="card border rounded">
+                <img src="{{ url_for('static', filename='images/Internet-explorer.png') }}" height="180" width="90" class="card-img-top"
+                     alt="internet explorer">
+                <div class="card-body">
+                    <h5 class="card-title">Internet Explorer</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="mt-4"></div>
+            <p>
+                Bill Gates was taken to court where he was asked many questions regarding the 1995 meeting, he had with
+                Netscape, he denied all the accusations made but there was email evidence of him saying all the things
+                that he was accused for.
+
+                Bill Gates was found guilty and there was a verdict to split the company, as the news about this spread,
+                their stocks were affected overnight and it went down by 30Bn$. Gates was sick after all this took
+                place; the Court felt that the verdict was too harsh so they decided to take back the verdict of
+                splitting the company. However, Gates gave up his position as CEO and appointed Steve Ballmer as
+                Microsoft’s new CEO.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
