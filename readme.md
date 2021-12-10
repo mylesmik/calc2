@@ -1,10 +1,2 @@
-# Calculator Project Setup
-[![Build Status](https://app.travis-ci.com/mylesmik/calc2.svg?branch=part5)](https://app.travis-ci.com/mylesmik/calc2)
-
-To run tests, Lint, and Coverage report use this command:
-
-pytest  --pylint --cov
-
-.pylintrc is the config for pylint
-.coveragerc is the config for coverage
-setup.py is a config file for pytest
+# Calculator Output in Tabular form
+![subtable](https://user-images.githubusercontent.com/44517936/145654641-9c9a7fe1-b1d7-42b6-9d85-80656807581b.PNG)
