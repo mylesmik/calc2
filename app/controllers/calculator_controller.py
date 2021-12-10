@@ -1,3 +1,4 @@
+#import pandas as pd
 from app.controllers.controller import ControllerBase
 from calc.calculator import Calculator
 from calc.history.calculations import Calculations
@@ -5,6 +6,7 @@ from flask import render_template, request, flash
 
 
 class CalculatorController(ControllerBase):
+    # pylint: disable-all
     @staticmethod
     def post():
         if request.form['value1'] == '' or request.form['value2'] == '' or request.form['value3']=='':
@@ -25,6 +27,7 @@ class CalculatorController(ControllerBase):
             result = Calculations.get_last_calculation_result_value()
             return render_template('result.html', value1=value1, value2=value2, value3=value3, operation=operation, result=result)
         return render_template('calculator.html', error=error)
+
     @staticmethod
     def get():
         return render_template('calculator.html')
