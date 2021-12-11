@@ -2,13 +2,14 @@
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
+</style>
 {% endblock %}
 {% block content %}
-    <div class="container">
+    <div class="container w-50 text-center">
         <div class="row">
             <div class="col-sm-20">
                 <div class="card">
-                    <h1 class="card-header">Calculator-</h1>
+                    <h1 class="card-header justify-content-center align-content-center">Calculator-</h1>
                     <div class="card-body">
                         {% if error %}
                             <div class="alert alert-danger error" role="alert">
@@ -17,11 +18,11 @@
                         {% endif %}
                         <form action="/calculator" method="POST">
                             <label for="value1" class=" col-form-label">Value 1:</label><br>
-                            <input type="text" id="value1" name="value1"  value=""><br>
+                            <input type="text" id="value1" name="value1" size="10"  value=""><br>
                             <label for="value2" class=" col-form-label">Value 2:</label><br>
-                            <input type="text" id="value2" name="value2"  value=""><br>
+                            <input type="text" id="value2" name="value2" size="10" value=""><br>
                             <label for="value3" class=" col-form-label">Value 3:</label><br>
-                            <input type="text" id="value3" name="value3"  value=""><br>
+                            <input type="text" id="value3" name="value3" size="10" value=""><br>
                             <fieldset>
                                 <hr class="my-4">
                                 <legend>Operation</legend>
