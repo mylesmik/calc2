@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<div style="padding: 20px">
+
+    <br>
+    <br>
+    <h1>Results Table</h1>
+    <table id="data" class="table table-striped">
+        <thead>
+    <tr>
+        {% for col in titles %}
+        <th scope="col">{{col}}</th>
+        {% endfor %}
+    </tr>
+        </thead>
+        <tbody>
+        {% for row in row_data %}
+        <tr>
+            {% for col, row_ in zip(titles, row) %}
+            <th scope="row">{{row_}}</th>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}
