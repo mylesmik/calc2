@@ -4,6 +4,7 @@ from app.controllers.index_controller import IndexController
 from app.controllers.calculator_controller import CalculatorController
 from app.controllers.video2_controller import Video2Controller
 from app.controllers.part3_controller import Part3Controller
+from app.controllers.team_controller import TeamController
 from werkzeug.debug import DebuggedApplication
 
 #pylint: disable-all
@@ -22,6 +23,10 @@ def video2_get():
 @app.route("/part3", methods=['GET'])
 def part3_get():
     return Part3Controller.get()
+
+@app.route("/team", methods=['GET'])
+def team_get():
+    return TeamController.get()
 
 @app.route("/calculator", methods=['GET'])
 def calculator_get():

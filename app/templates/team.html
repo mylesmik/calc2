@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Project By:</h1>
+    <p>Myles Dsouza</p>
+</div>
+<div class="container">
+    <div class="row cardRow">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/myles.JPG') }}" height="500" width="300" class="card-img-top" alt="Myles">
+                <div class="card-body">
+                    <h5 class="card-title">Myles Dsouza</h5>
+                    <a href="https://github.com/mylesmik/internet-history-601" class="btn btn-primary">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h1>
+</h1>
+<h1></h1>
+{% endblock %}
