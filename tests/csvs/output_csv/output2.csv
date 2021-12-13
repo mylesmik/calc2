@@ -6,3 +6,5 @@ Value1,Value2,Value3,Result,Operation
 9,3,7,189.0,multiply_numbers
 4,5,5,100.0,multiply_numbers
 1,0,0,Zero Division Error,divide_numbers
+1,2,3,-4.0,subtract_numbers
+1,2,0,Zero Division Error,divide_numbers
